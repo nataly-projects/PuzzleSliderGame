@@ -9,7 +9,7 @@ Try to beat your best puzzle times
 Puzzle Features:
 - Puzzles sizes: 3x3, 4x4, 5x5, 6x6
 - No time limits.
-- - Best times recording.
+- Best times recording.
 - Possibility to view the photos to help solve the puzzle.
 - Many images of all difficulties
 - For all ages.
