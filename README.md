@@ -1,5 +1,4 @@
 # Slider Puzzle Game
-===========================
 
 The Slider Puzzle Game contains 96 different puzzles. 4 difficulty levels (3x3, 4x4, 5x5, 6x6 pieces).
 In the game a picture is torn down into smaller pieces of pictures and are scrambled from their correct position.
