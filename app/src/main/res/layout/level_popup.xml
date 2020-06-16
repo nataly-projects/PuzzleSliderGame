@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="360dp"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    app:cardBackgroundColor="#1C0545"  >
+
+    <RelativeLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/close_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close_white"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            android:text="Level Lock"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_lock_white"
+            android:layout_below="@id/title"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_centerHorizontal="true" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/image"
+            android:background="#c0c0c0" />
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view"
+            android:layout_centerHorizontal="true"
+            android:padding="2dp"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="7dp"
+            android:layout_margin="8dp"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Close"
+            android:textStyle="bold"
+            android:layout_alignParentStart="true"
+            android:textSize="20sp"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="30dp"
+            android:textColor="@android:color/white"
+            android:layout_below="@id/message" />
+
+        <TextView
+            android:id="@+id/star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Earn Star"
+            android:drawableRight="@drawable/ic_full_star"
+            android:layout_marginTop="7dp"
+            android:drawablePadding="2dp"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:textSize="20sp"
+            android:layout_marginRight="30dp"
+            android:textColor="@android:color/white"
+            android:layout_below="@id/message" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+

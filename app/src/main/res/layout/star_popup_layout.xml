@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="340dp"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="#1C0545" >
+
+    <RelativeLayout
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/close_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close_white"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true" />
+
+        <TextView
+            android:id="@+id/stars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/holo_blue_dark"
+            android:text="Stars"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_full_star"
+            android:layout_below="@id/stars"
+            android:layout_marginBottom="3dp"
+            android:layout_centerHorizontal="true" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/image"
+            android:background="#c0c0c0" />
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view"
+            android:layout_centerHorizontal="true"
+            android:padding="2dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:text="You can earn maximum of 5 stars per level, depending on how fast you finished the level." />
+
+        <TextView
+            android:id="@+id/rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text1"
+            android:layout_marginBottom="5dp"
+            android:layout_centerHorizontal="true"
+            android:text="The Rating:"
+            android:layout_margin="5dp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textStyle="bold"/>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/rate"
+            android:background="#c0c0c0" />
+
+        <LinearLayout
+            android:id="@+id/rate3"
+            android:layout_below="@id/view2"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_full_star" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_full_star" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_full_star" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_empty_star" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_empty_star" />
+            <TextView
+                android:id="@+id/text_rate3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textColor="@android:color/holo_blue_dark"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rate4"
+            android:layout_below="@id/rate3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_full_star" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_full_star" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_full_star" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_full_star" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_empty_star" />
+            <TextView
+                android:id="@+id/text_rate4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textColor="@android:color/holo_blue_dark"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rate5"
+            android:layout_marginBottom="3dp"
+            android:layout_below="@id/rate4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_full_star" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_full_star" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_full_star" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_full_star" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_full_star" />
+            <TextView
+                android:id="@+id/text_rate5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textColor="@android:color/holo_blue_dark"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/rate5"
+            android:background="#c0c0c0" />
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view3"
+            android:layout_centerHorizontal="true"
+            android:padding="2dp"
+            android:layout_marginTop="3dp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:text="Maximum stars you can earn for this levels:"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text2"
+            android:text="120"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:drawableRight="@drawable/ic_full_star"
+            android:textColor="@android:color/holo_blue_dark"
+            android:drawablePadding="3dp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -7,55 +7,117 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
+        <TextView
+            android:id="@+id/medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Medium Level"
+            android:textColor="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+
+        <View
+            android:id="@+id/top_view"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/medium"
+            android:background="#c0c0c0" />
+
+        <TextView
+            android:id="@+id/counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="00/24"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="30dp"
+            android:layout_below="@id/top_view"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/stars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="0"
+            android:layout_marginLeft="30dp"
+            android:layout_below="@id/top_view"
+            android:textColor="@android:color/white"
+            android:drawableRight="@drawable/ic_full_star"
+            android:drawablePadding="2dp"
+            android:textStyle="bold"
+            android:textSize="30sp" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/stars"
+            android:background="#c0c0c0" />
+
     <ScrollView
+        android:layout_below="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/medium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Medium Level"
-                android:textColor="@android:color/holo_orange_dark"
-                android:gravity="center"
-                android:textSize="50sp"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp" />
-
-            <TextView
-                android:id="@+id/counter"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp"
-                android:text="00/24"
-                android:layout_below="@id/medium"
-                android:textColor="@android:color/white"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textSize="30sp" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp" >
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c1"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
-                app:cardCornerRadius="10dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:elevation="0dp"
-                android:layout_below="@id/counter"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                app:cardCornerRadius="8dp"
+                android:layout_alignParentStart="true"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="invisible">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c1_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c1_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
+
 
                 <TextView
                     android:id="@+id/n1"
@@ -75,18 +137,16 @@
                     android:visibility="invisible"
                     android:layout_gravity="bottom|center"
                     android:textColor="@android:color/white" />
-
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c2"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
                 android:layout_toRightOf="@id/c1"
-                android:layout_below="@id/counter"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
@@ -96,12 +156,42 @@
                     android:background="@drawable/cardview_body_medium">
                 </LinearLayout>
 
+                <LinearLayout
+                    android:id="@+id/rate2"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c2_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c2_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                </LinearLayout>
+
                 <ImageView
                     android:id="@+id/i2"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n2"
@@ -113,6 +203,20 @@
                     android:textStyle="bold"
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/toUnlock2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
 
                 <TextView
                     android:id="@+id/t2"
@@ -127,28 +231,57 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c3"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/counter"
                 android:layout_toRightOf="@id/c2"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                android:layout_alignParentEnd="true"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate3"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c3_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c3_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i3"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n3"
@@ -160,6 +293,20 @@
                     android:textStyle="bold"
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/toUnlock3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_vertical|center_horizontal" />
 
                 <TextView
                     android:id="@+id/t3"
@@ -174,28 +321,57 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c4"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/counter"
-                android:layout_toRightOf="@id/c3"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                android:layout_below="@id/c1"
+                android:layout_alignParentStart="true"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate4"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c4_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c4_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i4"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n4"
@@ -209,6 +385,20 @@
                     android:textColor="@android:color/black" />
 
                 <TextView
+                    android:id="@+id/toUnlock4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
+
+                <TextView
                     android:id="@+id/t4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -220,27 +410,57 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c5"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/c1"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                android:layout_below="@id/c2"
+                android:layout_toRightOf="@id/c4"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate5"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c5_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c5_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i5"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n5"
@@ -252,6 +472,20 @@
                     android:textStyle="bold"
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/toUnlock5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="16"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
 
                 <TextView
                     android:id="@+id/t5"
@@ -266,28 +500,58 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c6"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/c2"
+                android:layout_below="@id/c3"
                 android:layout_toRightOf="@id/c5"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                android:layout_alignParentEnd="true"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate6"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c6_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c6_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i6"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n6"
@@ -299,6 +563,20 @@
                     android:textStyle="bold"
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/toUnlock6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
 
                 <TextView
                     android:id="@+id/t6"
@@ -313,28 +591,57 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c7"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/c3"
-                android:layout_toRightOf="@id/c6"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                android:layout_below="@id/c4"
+                android:layout_alignParentStart="true"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate7"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c7_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c7_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i7"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n7"
@@ -346,6 +653,20 @@
                     android:textStyle="bold"
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/toUnlock7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="24"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
 
                 <TextView
                     android:id="@+id/t7"
@@ -360,28 +681,57 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c8"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/c4"
+                android:layout_below="@id/c5"
                 android:layout_toRightOf="@id/c7"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate8"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c8_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c8_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i8"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n8"
@@ -395,6 +745,20 @@
                     android:textColor="@android:color/black" />
 
                 <TextView
+                    android:id="@+id/toUnlock8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="28"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
+
+                <TextView
                     android:id="@+id/t8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -406,27 +770,58 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c9"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/c5"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                android:layout_below="@id/c6"
+                android:layout_toRightOf="@id/c8"
+                android:layout_alignParentEnd="true"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate9"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c9_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c9_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i9"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n9"
@@ -440,6 +835,20 @@
                     android:textColor="@android:color/black" />
 
                 <TextView
+                    android:id="@+id/toUnlock9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="32"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
+
+                <TextView
                     android:id="@+id/t9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -451,28 +860,57 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c10"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/c6"
-                android:layout_toRightOf="@id/c9"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                android:layout_below="@id/c7"
+                android:layout_alignParentStart="true"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate10"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c10_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c10_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i10"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n10"
@@ -484,6 +922,21 @@
                     android:textStyle="bold"
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/toUnlock10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="36"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
+
                 <TextView
                     android:id="@+id/t10"
                     android:layout_width="wrap_content"
@@ -496,28 +949,57 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c11"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
                 android:layout_below="@id/c7"
                 android:layout_toRightOf="@id/c10"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate11"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c11_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c11_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i11"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n11"
@@ -529,6 +1011,20 @@
                     android:textStyle="bold"
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/toUnlock11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="40"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
                 <TextView
                     android:id="@+id/t11"
                     android:layout_width="wrap_content"
@@ -541,28 +1037,58 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c12"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/c8"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/c9"
                 android:layout_toRightOf="@id/c11"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate12"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c12_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c12_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i12"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n12"
@@ -574,6 +1100,21 @@
                     android:textStyle="bold"
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/toUnlock12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="44"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
+
                 <TextView
                     android:id="@+id/t12"
                     android:layout_width="wrap_content"
@@ -586,27 +1127,57 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c13"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/c9"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                android:layout_below="@id/c10"
+                android:layout_alignParentStart="true"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate13"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c13_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c13_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i13"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n13"
@@ -618,6 +1189,21 @@
                     android:textStyle="bold"
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/toUnlock13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="48"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
+
                 <TextView
                     android:id="@+id/t13"
                     android:layout_width="wrap_content"
@@ -630,28 +1216,57 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c14"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
                 android:layout_below="@id/c10"
                 android:layout_toRightOf="@id/c13"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate14"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c14_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c14_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i14"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n14"
@@ -663,6 +1278,21 @@
                     android:textStyle="bold"
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/toUnlock14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="52"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
+
                 <TextView
                     android:id="@+id/t14"
                     android:layout_width="wrap_content"
@@ -675,28 +1305,58 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c15"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/c11"
+                android:layout_below="@id/c12"
                 android:layout_toRightOf="@id/c14"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                android:layout_alignParentEnd="true"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate15"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c15_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c15_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i15"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n15"
@@ -708,6 +1368,21 @@
                     android:textStyle="bold"
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/toUnlock15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="56"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
+
                 <TextView
                     android:id="@+id/t15"
                     android:layout_width="wrap_content"
@@ -720,28 +1395,57 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c16"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/c12"
-                android:layout_toRightOf="@id/c15"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                android:layout_below="@id/c13"
+                android:layout_alignParentStart="true"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate16"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c16_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c16_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i16"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n16"
@@ -753,6 +1457,21 @@
                     android:textStyle="bold"
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/toUnlock16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="60"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
+
                 <TextView
                     android:id="@+id/t16"
                     android:layout_width="wrap_content"
@@ -765,27 +1484,57 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c17"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/c13"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                android:layout_below="@id/c14"
+                android:layout_toRightOf="@id/c16"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate17"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c17_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c17_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i17"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n17"
@@ -797,6 +1546,21 @@
                     android:textStyle="bold"
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/toUnlock17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="64"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
+
                 <TextView
                     android:id="@+id/t17"
                     android:layout_width="wrap_content"
@@ -809,28 +1573,58 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c18"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/c14"
+                android:layout_below="@id/c15"
                 android:layout_toRightOf="@id/c17"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                android:layout_alignParentEnd="true"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate18"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c18_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c18_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i18"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n18"
@@ -842,6 +1636,21 @@
                     android:textStyle="bold"
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/toUnlock18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="68"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
+
                 <TextView
                     android:id="@+id/t18"
                     android:layout_width="wrap_content"
@@ -854,28 +1663,57 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c19"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/c15"
-                android:layout_toRightOf="@id/c18"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                android:layout_below="@id/c16"
+                android:layout_alignParentStart="true"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate19"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c19_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c19_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i19"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n19"
@@ -888,6 +1726,19 @@
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
                 <TextView
+                    android:id="@+id/toUnlock19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="72"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
+                <TextView
                     android:id="@+id/t19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -899,28 +1750,57 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c20"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/c16"
+                android:layout_below="@id/c17"
                 android:layout_toRightOf="@id/c19"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate20"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c20_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c20_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i20"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n20"
@@ -933,6 +1813,19 @@
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
                 <TextView
+                    android:id="@+id/toUnlock20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="76"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
+                <TextView
                     android:id="@+id/t20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -944,27 +1837,57 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c21"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/c17"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                android:layout_below="@id/c18"
+                android:layout_alignParentEnd="true"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate21"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c21_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c21_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i21"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n21"
@@ -977,6 +1900,19 @@
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
                 <TextView
+                    android:id="@+id/toUnlock21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="80"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
+                <TextView
                     android:id="@+id/t21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -988,28 +1924,57 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c22"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/c18"
-                android:layout_toRightOf="@id/c21"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                android:layout_below="@id/c19"
+                android:layout_alignParentStart="true"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate22"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c22_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c22_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i22"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n22"
@@ -1022,6 +1987,19 @@
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
                 <TextView
+                    android:id="@+id/toUnlock22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="84"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical"/>
+                <TextView
                     android:id="@+id/t22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -1033,28 +2011,57 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c23"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/c19"
+                android:layout_below="@id/c20"
                 android:layout_toRightOf="@id/c22"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate23"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c23_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c23_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i23"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n23"
@@ -1067,6 +2074,19 @@
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
                 <TextView
+                    android:id="@+id/toUnlock23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="88"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical"/>
+                <TextView
                     android:id="@+id/t23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -1078,28 +2098,58 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/c24"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="0dp"
-                android:layout_below="@id/c20"
+                android:layout_below="@id/c21"
                 android:layout_toRightOf="@id/c23"
-                app:cardBackgroundColor="@android:color/holo_orange_dark"
+                android:layout_alignParentEnd="true"
+                app:cardBackgroundColor="@android:color/holo_blue_dark"
                 android:layout_margin="9dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/cardview_body_medium">
+                    android:background="@drawable/cardview_body_medium" />
+
+                <LinearLayout
+                    android:id="@+id/rate24"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c24_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
+                    <ImageView
+                        android:id="@+id/c24_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_full_star" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/i24"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_baseline_lock_24"
-                    android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_baseline_lock_24" />
 
                 <TextView
                     android:id="@+id/n24"
@@ -1111,6 +2161,19 @@
                     android:textStyle="bold"
                     android:layout_gravity="center"
                     android:textColor="@android:color/black" />
+                <TextView
+                    android:id="@+id/toUnlock24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="92"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_full_star"
+                    android:drawablePadding="2dp"
+                    android:layout_gravity="center_horizontal|center_vertical"/>
                 <TextView
                     android:id="@+id/t24"
                     android:layout_width="wrap_content"

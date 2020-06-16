@@ -65,9 +65,10 @@
 
             <TextView
                 android:id="@+id/medium"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Medium"
+                android:gravity="center"
                 android:layout_marginTop="10dp"
                 android:padding="40dp"
                 android:textColor="@android:color/white"
@@ -82,11 +83,12 @@
 
             <TextView
                 android:id="@+id/hard"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Hard"
                 android:layout_marginTop="10dp"
                 android:padding="40dp"
+                android:gravity="center"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
                 android:textSize="40dp"
@@ -99,10 +101,11 @@
 
             <TextView
                 android:id="@+id/expert"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Expert"
                 android:padding="40dp"
+                android:gravity="center"
                 android:layout_marginTop="10dp"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
@@ -113,6 +116,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="4dp"
                 android:background="#c0c0c0" />
+
 
             <com.google.android.gms.ads.AdView
                 xmlns:ads="http://schemas.android.com/apk/res-auto"

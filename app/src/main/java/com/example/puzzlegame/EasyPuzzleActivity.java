@@ -16,9 +16,12 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
@@ -43,8 +46,10 @@ public class EasyPuzzleActivity extends AppCompatActivity {
     private static ArrayList<Bitmap> chunkedImage;
 
     private static Chronometer timer;
+    private static TextView finish;
     private ImageView image, fullImage, pp;
     private boolean visibility = false, isPlay = true;
+    private static Animation blinkAnim;
     private long lastPause;
 
     @Override
@@ -58,12 +63,15 @@ public class EasyPuzzleActivity extends AppCompatActivity {
         image = findViewById(R.id.image);
         fullImage = findViewById(R.id.fullImage);
         timer = findViewById(R.id.timer);
-        pp = findViewById(R.id.pp);
+        finish = findViewById(R.id.finish);
+        //pp = findViewById(R.id.pp);
 
         timer.setBase(SystemClock.elapsedRealtime());
         timer.start();
 
-        pp.setOnClickListener(new View.OnClickListener() {
+        blinkAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
+
+    /*    pp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -85,7 +93,7 @@ public class EasyPuzzleActivity extends AppCompatActivity {
                     pp.setImageResource(R.drawable.ic_pause);
                 }
             }
-        });
+        }); */
 
         image.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -357,6 +365,9 @@ public class EasyPuzzleActivity extends AppCompatActivity {
         if(isSolved){
             timer.stop();
             final long time = SystemClock.elapsedRealtime() - timer.getBase();
+            timer.setVisibility(View.INVISIBLE);
+            finish.setVisibility(View.VISIBLE);
+            finish.startAnimation(blinkAnim);
 
             new Handler().postDelayed(new Runnable() {
                 @Override
@@ -366,7 +377,7 @@ public class EasyPuzzleActivity extends AppCompatActivity {
                     activity.setResult(Activity.RESULT_OK, intent);
                     activity.finish();
                 }
-            }, 3000);
+            }, 2000);
         }
     }
 
