@@ -22,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView  easy, medium, hard, expert;
     private AdView adView;
-    private InterstitialAd interstitialAd;
-    private String activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +37,6 @@ public class MainActivity extends AppCompatActivity {
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         Constants.SCRREN_WIDTH = metrics.widthPixels;
 
-        interstitialAd = new InterstitialAd(this);
-        interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
-        interstitialAd.loadAd(new AdRequest.Builder().build());
-
         MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
         adView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -53,85 +47,33 @@ public class MainActivity extends AppCompatActivity {
         hard = findViewById(R.id.hard);
         expert = findViewById(R.id.expert);
 
-        interstitialAd.setAdListener(new AdListener()
-                                     {
-                                         @Override
-                                         public void onAdClosed() {
-                                             interstitialAd.loadAd(new AdRequest.Builder().build());
-                                             Log.d("Mydebug", "activity: " + activity)
-;                                             startLevelActivity();
-                                             //startActivity(new Intent(MainActivity.this, GameActivity.class));
-                                         }
-                                     }
-
-        );
-
         easy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity = "easy";
-                if(interstitialAd.isLoaded()){
-                    interstitialAd.show();
-                }
-
-
-                //startActivity(new Intent(MainActivity.this, EasyLevelActivity.class));
+                startActivity(new Intent(MainActivity.this, EasyLevelActivity.class));
             }
         });
 
         medium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(MainActivity.this, MediumLevelActivity.class));
-                activity = "medium";
-                if(interstitialAd.isLoaded()){
-                    interstitialAd.show();
-                }
-
+                startActivity(new Intent(MainActivity.this, MediumLevelActivity.class));
             }
         });
 
         hard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity = "hard";
-                if(interstitialAd.isLoaded()){
-                    interstitialAd.show();
-                }
-                //startActivity(new Intent(MainActivity.this, HardLevelActivity.class));
+                startActivity(new Intent(MainActivity.this, HardLevelActivity.class));
             }
         });
 
         expert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity = "expert";
-                if(interstitialAd.isLoaded()){
-                    interstitialAd.show();
-                }
-                //startActivity(new Intent(MainActivity.this, ExpertLevelActivity.class));
+                startActivity(new Intent(MainActivity.this, ExpertLevelActivity.class));
             }
         });
     }
 
-    private void startLevelActivity(){
-
-        switch (activity){
-            case "easy":
-                startActivity(new Intent(MainActivity.this, EasyLevelActivity.class));
-                break;
-
-            case "medium":
-                startActivity(new Intent(MainActivity.this, MediumLevelActivity.class));
-                break;
-
-            case "hard":
-                startActivity(new Intent(MainActivity.this, HardLevelActivity.class));
-                break;
-
-            case "expert":
-                startActivity(new Intent(MainActivity.this, ExpertLevelActivity.class));
-                break;
-        }
-    }
 }

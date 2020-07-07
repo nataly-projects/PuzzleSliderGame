@@ -396,7 +396,6 @@ public class EasyPuzzleActivity extends AppCompatActivity {
         isSolved = solved;
     }
 
-
     private void splitImage() {
         Bitmap bitmap = null;
         int width = 0;
