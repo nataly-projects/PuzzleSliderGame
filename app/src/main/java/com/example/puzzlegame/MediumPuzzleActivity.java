@@ -39,10 +39,9 @@ public class MediumPuzzleActivity extends AppCompatActivity {
 
     private static Chronometer timer;
     private static TextView finish;
-    private ImageView image, fullImage, pp;
+    private ImageView image, fullImage;
     private boolean visibility = false, isPlay = true;
     private static Animation blinkAnim;
-    private long lastPause;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +54,6 @@ public class MediumPuzzleActivity extends AppCompatActivity {
         image = findViewById(R.id.image);
         fullImage = findViewById(R.id.fullImage);
         timer = findViewById(R.id.timer);
-        //pp = findViewById(R.id.pp);
         finish = findViewById(R.id.finish);
 
         timer.setBase(SystemClock.elapsedRealtime());
@@ -63,29 +61,6 @@ public class MediumPuzzleActivity extends AppCompatActivity {
 
         blinkAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
 
-     /*   pp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if(isPlay){
-                    lastPause = SystemClock.elapsedRealtime();
-                    timer.stop();
-                    isPlay = false;
-                    pp.setImageResource(R.drawable.ic_play);
-                }
-                else{
-                    if (lastPause != 0){
-                        timer.setBase(timer.getBase() + SystemClock.elapsedRealtime() - lastPause);
-                    }
-                    else{
-                        timer.setBase(SystemClock.elapsedRealtime());
-                    }
-                    timer.start();
-                    isPlay = true;
-                    pp.setImageResource(R.drawable.ic_pause);
-                }
-            }
-        }); */
 
         image.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,22 +1,18 @@
 package com.example.puzzlegame;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -75,7 +71,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                                          @Override
                                          public void onAdClosed() {
                                              interstitialAd.loadAd(new AdRequest.Builder().build());
-                                             Log.d("Mydebug", "level: " + level);
                                              startLevelActivity();
                                          }
                                      }
@@ -117,7 +112,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c2Sp = sp.getInt("c2", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 4){
                     level = "2";
                     if(interstitialAd.isLoaded()){
@@ -161,7 +155,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c3Sp = sp.getInt("c3", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 8){
                     level = "3";
                     if(interstitialAd.isLoaded()){
@@ -205,7 +198,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c4Sp = sp.getInt("c4", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 12){
                     level = "4";
                     if(interstitialAd.isLoaded()){
@@ -249,7 +241,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c5Sp = sp.getInt("c5", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 16){
                     level = "5";
                     if(interstitialAd.isLoaded()){
@@ -293,7 +284,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c6Sp = sp.getInt("c6", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 20){
                     level = "6";
                     if(interstitialAd.isLoaded()){
@@ -337,7 +327,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c7Sp = sp.getInt("c7", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 24){
                     level = "7";
                     if(interstitialAd.isLoaded()){
@@ -381,7 +370,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c8Sp = sp.getInt("c8", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 28){
                     level = "8";
                     if(interstitialAd.isLoaded()){
@@ -425,7 +413,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c9Sp = sp.getInt("c9", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 32){
                     level = "9";
                     if(interstitialAd.isLoaded()){
@@ -469,7 +456,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c10Sp = sp.getInt("c10", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 36){
                     level = "10";
                     if(interstitialAd.isLoaded()){
@@ -513,7 +499,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c11Sp = sp.getInt("c11", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 40){
                     level = "11";
                     if(interstitialAd.isLoaded()){
@@ -557,7 +542,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c12Sp = sp.getInt("c12", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 44){
                     level = "12";
                     if(interstitialAd.isLoaded()){
@@ -601,7 +585,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c13Sp = sp.getInt("c13", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 48){
                     level = "13";
                     if(interstitialAd.isLoaded()){
@@ -645,7 +628,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c14Sp = sp.getInt("c14", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 52){
                     level = "14";
                     if(interstitialAd.isLoaded()){
@@ -689,7 +671,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c15Sp = sp.getInt("c15", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 56){
                     level = "15";
                     if(interstitialAd.isLoaded()){
@@ -733,7 +714,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c16Sp = sp.getInt("c16", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 60){
                     level = "16";
                     if(interstitialAd.isLoaded()){
@@ -777,7 +757,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c17.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c17Sp = sp.getInt("c17", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 64){
                     level = "17";
                     if(interstitialAd.isLoaded()){
@@ -821,7 +800,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c18Sp = sp.getInt("c18", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 68){
                     level = "18";
                     if(interstitialAd.isLoaded()){
@@ -866,7 +844,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c19.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c19Sp = sp.getInt("c19", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 72){
                     level = "19";
                     if(interstitialAd.isLoaded()){
@@ -911,7 +888,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c20Sp = sp.getInt("c20", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 76){
                     level = "20";
                     if(interstitialAd.isLoaded()){
@@ -955,7 +931,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c21.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c21Sp = sp.getInt("c21", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 80){
                     level = "21";
                     if(interstitialAd.isLoaded()){
@@ -1000,7 +975,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c22.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c22Sp = sp.getInt("c22", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 84){
                     level = "22";
                     if(interstitialAd.isLoaded()){
@@ -1044,7 +1018,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c23.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c23Sp = sp.getInt("c23", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 88){
                     level = "23";
                     if(interstitialAd.isLoaded()){
@@ -1089,7 +1062,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         c24.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int c24Sp = sp.getInt("c24", 0);
                 if(sp.getInt("easy_counter_stars", 0) >= 92){
                     level = "24";
                     if(interstitialAd.isLoaded()){
@@ -2154,7 +2126,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         //3 stars = > time more than 35 seconds.
 
         SharedPreferences sp = getSharedPreferences("MyPref", 0);
-        //SharedPreferences.Editor editor = sp.edit();
 
         int hours = (int) (time / 3600000);
         int minutes = (int) (time - hours * 3600000) / 60000;
@@ -2162,19 +2133,15 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
 
         int rate;
         stars = sp.getInt("easy_counter_stars", 0);
-        //Log.d("Mydebug", "rate form sp: " + rateSp);
 
         if(hours == 0 && minutes == 0 && seconds < 20){
             rate = 5;
-            //rateSp += 5;
         }
         else if(hours == 0 && minutes == 0 && seconds >= 20 && seconds < 35){
             rate = 4;
-            //rateSp += 4;
         }
         else {
             rate = 3;
-            //rateSp += 5;
         }
 
         return rate;
@@ -2485,16 +2452,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c1_star4 = findViewById(R.id.c1_star4);
                     int c1_rate = getRate(time);
                     int c1_stars = sp.getInt("easy_c1_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c1_rate - c1_stars > 0){
-                        Log.d("Mydebug", "rate: " + c1_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c1_rate - c1_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c1_stars", c1_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c1_rate){
                             case 5:
@@ -2544,16 +2507,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c2_star4 = findViewById(R.id.c2_star4);
                     int c2_rate = getRate(time);
                     int c2_stars = sp.getInt("easy_c2_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c2_rate - c2_stars > 0){
-                        Log.d("Mydebug", "rate: " + c2_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c2_rate - c2_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c2_stars", c2_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c2_rate){
                             case 5:
@@ -2604,16 +2563,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c3_star4 = findViewById(R.id.c3_star4);
                     int c3_rate = getRate(time);
                     int c3_stars = sp.getInt("easy_c3_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c3_rate - c3_stars > 0){
-                        Log.d("Mydebug", "rate: " + c3_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c3_rate - c3_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c3_stars", c3_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c3_rate){
                             case 5:
@@ -2664,16 +2619,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c4_star4 = findViewById(R.id.c4_star4);
                     int c4_rate = getRate(time);
                     int c4_stars = sp.getInt("easy_c4_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c4_rate - c4_stars > 0){
-                        Log.d("Mydebug", "rate: " + c4_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c4_rate - c4_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c4_stars", c4_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c4_rate){
                             case 5:
@@ -2724,16 +2675,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c5_star4 = findViewById(R.id.c5_star4);
                     int c5_rate = getRate(time);
                     int c5_stars = sp.getInt("easy_c5_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c5_rate - c5_stars > 0){
-                        Log.d("Mydebug", "rate: " + c5_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c5_rate - c5_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c5_stars", c5_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c5_rate){
                             case 5:
@@ -2784,16 +2731,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c6_star4 = findViewById(R.id.c6_star4);
                     int c6_rate = getRate(time);
                     int c6_stars = sp.getInt("easy_c6_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c6_rate - c6_stars > 0){
-                        Log.d("Mydebug", "rate: " + c6_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c6_rate - c6_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c6_stars", c6_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c6_rate){
                             case 5:
@@ -2844,16 +2787,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c7_star4 = findViewById(R.id.c7_star4);
                     int c7_rate = getRate(time);
                     int c7_stars = sp.getInt("easy_c7_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c7_rate - c7_stars > 0){
-                        Log.d("Mydebug", "rate: " + c7_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c7_rate - c7_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c7_stars", c7_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c7_rate){
                             case 5:
@@ -2906,16 +2845,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c8_star4 = findViewById(R.id.c8_star4);
                     int c8_rate = getRate(time);
                     int c8_stars = sp.getInt("easy_c8_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c8_rate - c8_stars > 0){
-                        Log.d("Mydebug", "rate: " + c8_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c8_rate - c8_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c8_stars", c8_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c8_rate){
                             case 5:
@@ -2968,16 +2903,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c9_star4 = findViewById(R.id.c9_star4);
                     int c9_rate = getRate(time);
                     int c9_stars = sp.getInt("easy_c9_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c9_rate - c9_stars > 0){
-                        Log.d("Mydebug", "rate: " + c9_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c9_rate - c9_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c9_stars", c9_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c9_rate){
                             case 5:
@@ -3027,16 +2958,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c11_star4 = findViewById(R.id.c11_star4);
                     int c11_rate = getRate(time);
                     int c11_stars = sp.getInt("easy_c11_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c11_rate - c11_stars > 0){
-                        Log.d("Mydebug", "rate: " + c11_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c11_rate - c11_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c11_stars", c11_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c11_rate){
                             case 5:
@@ -3087,16 +3014,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c17_star4 = findViewById(R.id.c17_star4);
                     int c17_rate = getRate(time);
                     int c17_stars = sp.getInt("easy_c17_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c17_rate - c17_stars > 0){
-                        Log.d("Mydebug", "rate: " + c17_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c17_rate - c17_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c17_stars", c17_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c17_rate){
                             case 5:
@@ -3149,16 +3072,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c10_star4 = findViewById(R.id.c10_star4);
                     int c10_rate = getRate(time);
                     int c10_stars = sp.getInt("easy_c10_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c10_rate - c10_stars > 0){
-                        Log.d("Mydebug", "rate: " + c10_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c10_rate - c10_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c10_stars", c10_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c10_rate){
                             case 5:
@@ -3209,16 +3128,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c12_star4 = findViewById(R.id.c12_star4);
                     int c12_rate = getRate(time);
                     int c12_stars = sp.getInt("easy_c12_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c12_rate - c12_stars > 0){
-                        Log.d("Mydebug", "rate: " + c12_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c12_rate - c12_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c12_stars", c12_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c12_rate){
                             case 5:
@@ -3270,16 +3185,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c13_star4 = findViewById(R.id.c13_star4);
                     int c13_rate = getRate(time);
                     int c13_stars = sp.getInt("easy_c13_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c13_rate - c13_stars > 0){
-                        Log.d("Mydebug", "rate: " + c13_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c13_rate - c13_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c13_stars", c13_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c13_rate){
                             case 5:
@@ -3330,16 +3241,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c14_star4 = findViewById(R.id.c14_star4);
                     int c14_rate = getRate(time);
                     int c14_stars = sp.getInt("easy_c14_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c14_rate - c14_stars > 0){
-                        Log.d("Mydebug", "rate: " + c14_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c14_rate - c14_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c14_stars", c14_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c14_rate){
                             case 5:
@@ -3388,16 +3295,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c15_star4 = findViewById(R.id.c15_star4);
                     int c15_rate = getRate(time);
                     int c15_stars = sp.getInt("easy_c15_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c15_rate - c15_stars > 0){
-                        Log.d("Mydebug", "rate: " + c15_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c15_rate - c15_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c15_stars", c15_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c15_rate){
                             case 5:
@@ -3448,16 +3351,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c16_star4 = findViewById(R.id.c16_star4);
                     int c16_rate = getRate(time);
                     int c16_stars = sp.getInt("easy_c16_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c16_rate - c16_stars > 0){
-                        Log.d("Mydebug", "rate: " + c16_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c16_rate - c16_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c16_stars", c16_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c16_rate){
                             case 5:
@@ -3508,16 +3407,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c18_star4 = findViewById(R.id.c18_star4);
                     int c18_rate = getRate(time);
                     int c18_stars = sp.getInt("easy_c18_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c18_rate - c18_stars > 0){
-                        Log.d("Mydebug", "rate: " + c18_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c18_rate - c18_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c18_stars", c18_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c18_rate){
                             case 5:
@@ -3567,16 +3462,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c19_star4 = findViewById(R.id.c19_star4);
                     int c19_rate = getRate(time);
                     int c19_stars = sp.getInt("easy_c19_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c19_rate - c19_stars > 0){
-                        Log.d("Mydebug", "rate: " + c19_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c19_rate - c19_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c19_stars", c19_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c19_rate){
                             case 5:
@@ -3627,16 +3518,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c20_star4 = findViewById(R.id.c20_star4);
                     int c20_rate = getRate(time);
                     int c20_stars = sp.getInt("easy_c20_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c20_rate - c20_stars > 0){
-                        Log.d("Mydebug", "rate: " + c20_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c20_rate - c20_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c20_stars", c20_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c20_rate){
                             case 5:
@@ -3688,16 +3575,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c21_star4 = findViewById(R.id.c21_star4);
                     int c21_rate = getRate(time);
                     int c21_stars = sp.getInt("easy_c21_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c21_rate - c21_stars > 0){
-                        Log.d("Mydebug", "rate: " + c21_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c21_rate - c21_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c21_stars", c21_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c21_rate){
                             case 5:
@@ -3748,16 +3631,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c22_star4 = findViewById(R.id.c22_star4);
                     int c22_rate = getRate(time);
                     int c22_stars = sp.getInt("easy_c22_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c22_rate - c22_stars > 0){
-                        Log.d("Mydebug", "rate: " + c22_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c22_rate - c22_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c22_stars", c22_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c22_rate){
                             case 5:
@@ -3807,16 +3686,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c23_star4 = findViewById(R.id.c23_star4);
                     int c23_rate = getRate(time);
                     int c23_stars = sp.getInt("easy_c23_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c23_rate - c23_stars > 0){
-                        Log.d("Mydebug", "rate: " + c23_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c23_rate - c23_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c23_stars", c23_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c23_rate){
                             case 5:
@@ -3866,16 +3741,12 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
                     ImageView c24_star4 = findViewById(R.id.c24_star4);
                     int c24_rate = getRate(time);
                     int c24_stars = sp.getInt("easy_c24_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c24_rate - c24_stars > 0){
-                        Log.d("Mydebug", "rate: " + c24_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c24_rate - c24_stars);
                         editor.putInt("easy_counter_stars", stars);
                         editor.putInt("easy_c24_stars", c24_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c24_rate){
                             case 5:
@@ -3927,7 +3798,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
         SharedPreferences sp = getSharedPreferences("MyPref", 0);
         SharedPreferences.Editor editor = sp.edit();
 
-        Log.d("Mydebug", "get reward " );
         stars += 1;
         editor.putInt("easy_counter_stars", stars);
         editor.commit();
@@ -3957,7 +3827,6 @@ public class EasyLevelActivity extends AppCompatActivity implements RewardedVide
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d("Mydebug", "onResume");
         unlockLevels();
     }
 }

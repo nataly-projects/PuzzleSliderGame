@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -13,7 +12,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.animation.Animation;
@@ -22,12 +20,7 @@ import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,10 +40,9 @@ public class EasyPuzzleActivity extends AppCompatActivity {
 
     private static Chronometer timer;
     private static TextView finish;
-    private ImageView image, fullImage, pp;
+    private ImageView image, fullImage;
     private boolean visibility = false, isPlay = true;
     private static Animation blinkAnim;
-    private long lastPause;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,36 +56,11 @@ public class EasyPuzzleActivity extends AppCompatActivity {
         fullImage = findViewById(R.id.fullImage);
         timer = findViewById(R.id.timer);
         finish = findViewById(R.id.finish);
-        //pp = findViewById(R.id.pp);
 
         timer.setBase(SystemClock.elapsedRealtime());
         timer.start();
 
         blinkAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
-
-    /*    pp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if(isPlay){
-                    lastPause = SystemClock.elapsedRealtime();
-                    timer.stop();
-                    isPlay = false;
-                    pp.setImageResource(R.drawable.ic_play);
-                }
-                else{
-                    if (lastPause != 0){
-                        timer.setBase(timer.getBase() + SystemClock.elapsedRealtime() - lastPause);
-                    }
-                    else{
-                        timer.setBase(SystemClock.elapsedRealtime());
-                    }
-                    timer.start();
-                    isPlay = true;
-                    pp.setImageResource(R.drawable.ic_pause);
-                }
-            }
-        }); */
 
         image.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -439,8 +406,8 @@ public class EasyPuzzleActivity extends AppCompatActivity {
             height = bitmap.getHeight()/Constants.COLUMNS;
         }
         else if(level.equals("bird")) {
-            image.setImageResource(R.drawable.bird);
-            bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bird);
+            image.setImageResource(R.drawable.flamingo);
+            bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.flamingo);
             width = bitmap.getWidth()/Constants.COLUMNS;
             height = bitmap.getHeight()/Constants.COLUMNS;
         }

@@ -73,7 +73,6 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                                          @Override
                                          public void onAdClosed() {
                                              interstitialAd.loadAd(new AdRequest.Builder().build());
-                                             Log.d("Mydebug", "level: " + level);
                                              startLevelActivity();
                                          }
                                      }
@@ -2116,7 +2115,6 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
         editor.putString("medium_counter", counter_str);
         editor.commit();
         counterText.setText(counter_str);
-        //return counter_str;
     }
 
     private void unlockLevels(){
@@ -2245,7 +2243,6 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
         //3 stars = > time more than 1:20 seconds.
 
         SharedPreferences sp = getSharedPreferences("MyPref", 0);
-        //SharedPreferences.Editor editor = sp.edit();
 
         int hours = (int) (time / 3600000);
         int minutes = (int) (time - hours * 3600000) / 60000;
@@ -2253,20 +2250,16 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
 
         int rate;
         stars = sp.getInt("medium_counter_stars", 0);
-        //Log.d("Mydebug", "rate form sp: " + rateSp);
 
         if(hours == 0 && minutes == 0 && seconds < 40){
             rate = 5;
-            //rateSp += 5;
         }
         else if((hours == 0 && minutes == 0 && seconds >= 40 && seconds < 60) ||
                 (hours == 0 && minutes == 1 && seconds <= 20)){
             rate = 4;
-            //rateSp += 4;
         }
         else {
             rate = 3;
-            //rateSp += 5;
         }
 
         return rate;
@@ -2462,16 +2455,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c1_star4 = findViewById(R.id.c1_star4);
                     int c1_rate = getRate(time);
                     int c1_stars = sp.getInt("medium_c1_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c1_rate - c1_stars > 0){
-                        Log.d("Mydebug", "rate: " + c1_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c1_rate - c1_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c1_stars", c1_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c1_rate){
                             case 5:
@@ -2520,16 +2509,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c2_star4 = findViewById(R.id.c2_star4);
                     int c2_rate = getRate(time);
                     int c2_stars = sp.getInt("medium_c2_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c2_rate - c2_stars > 0){
-                        Log.d("Mydebug", "rate: " + c2_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c2_rate - c2_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c2_stars", c2_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c2_rate){
                             case 5:
@@ -2580,16 +2565,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c3_star4 = findViewById(R.id.c3_star4);
                     int c3_rate = getRate(time);
                     int c3_stars = sp.getInt("medium_c3_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c3_rate - c3_stars > 0){
-                        Log.d("Mydebug", "rate: " + c3_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c3_rate - c3_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c3_stars", c3_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c3_rate){
                             case 5:
@@ -2639,16 +2620,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c4_star4 = findViewById(R.id.c4_star4);
                     int c4_rate = getRate(time);
                     int c4_stars = sp.getInt("medium_c4_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c4_rate - c4_stars > 0){
-                        Log.d("Mydebug", "rate: " + c4_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c4_rate - c4_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c4_stars", c4_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c4_rate){
                             case 5:
@@ -2698,16 +2675,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c5_star4 = findViewById(R.id.c5_star4);
                     int c5_rate = getRate(time);
                     int c5_stars = sp.getInt("medium_c5_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c5_rate - c5_stars > 0){
-                        Log.d("Mydebug", "rate: " + c5_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c5_rate - c5_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c5_stars", c5_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c5_rate){
                             case 5:
@@ -2757,16 +2730,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c6_star4 = findViewById(R.id.c6_star4);
                     int c6_rate = getRate(time);
                     int c6_stars = sp.getInt("medium_c6_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c6_rate - c6_stars > 0){
-                        Log.d("Mydebug", "rate: " + c6_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c6_rate - c6_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c6_stars", c6_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c6_rate){
                             case 5:
@@ -2816,16 +2785,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c7_star4 = findViewById(R.id.c7_star4);
                     int c7_rate = getRate(time);
                     int c7_stars = sp.getInt("medium_c7_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c7_rate - c7_stars > 0){
-                        Log.d("Mydebug", "rate: " + c7_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c7_rate - c7_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c7_stars", c7_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c7_rate){
                             case 5:
@@ -2875,16 +2840,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c8_star4 = findViewById(R.id.c8_star4);
                     int c8_rate = getRate(time);
                     int c8_stars = sp.getInt("medium_c8_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c8_rate - c8_stars > 0){
-                        Log.d("Mydebug", "rate: " + c8_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c8_rate - c8_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c8_stars", c8_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c8_rate){
                             case 5:
@@ -2934,16 +2895,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c9_star4 = findViewById(R.id.c9_star4);
                     int c9_rate = getRate(time);
                     int c9_stars = sp.getInt("medium_c9_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c9_rate - c9_stars > 0){
-                        Log.d("Mydebug", "rate: " + c9_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c9_rate - c9_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c9_stars", c9_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c9_rate){
                             case 5:
@@ -2993,16 +2950,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c11_star4 = findViewById(R.id.c11_star4);
                     int c11_rate = getRate(time);
                     int c11_stars = sp.getInt("medium_c11_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c11_rate - c11_stars > 0){
-                        Log.d("Mydebug", "rate: " + c11_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c11_rate - c11_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c11_stars", c11_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c11_rate){
                             case 5:
@@ -3053,16 +3006,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c17_star4 = findViewById(R.id.c17_star4);
                     int c17_rate = getRate(time);
                     int c17_stars = sp.getInt("medium_c17_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c17_rate - c17_stars > 0){
-                        Log.d("Mydebug", "rate: " + c17_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c17_rate - c17_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c17_stars", c17_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c17_rate){
                             case 5:
@@ -3113,16 +3062,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c10_star4 = findViewById(R.id.c10_star4);
                     int c10_rate = getRate(time);
                     int c10_stars = sp.getInt("medium_c10_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c10_rate - c10_stars > 0){
-                        Log.d("Mydebug", "rate: " + c10_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c10_rate - c10_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c10_stars", c10_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c10_rate){
                             case 5:
@@ -3172,16 +3117,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c12_star4 = findViewById(R.id.c12_star4);
                     int c12_rate = getRate(time);
                     int c12_stars = sp.getInt("medium_c12_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c12_rate - c12_stars > 0){
-                        Log.d("Mydebug", "rate: " + c12_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c12_rate - c12_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c12_stars", c12_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c12_rate){
                             case 5:
@@ -3231,16 +3172,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c13_star4 = findViewById(R.id.c13_star4);
                     int c13_rate = getRate(time);
                     int c13_stars = sp.getInt("medium_c13_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c13_rate - c13_stars > 0){
-                        Log.d("Mydebug", "rate: " + c13_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c13_rate - c13_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c13_stars", c13_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c13_rate){
                             case 5:
@@ -3290,16 +3227,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c14_star4 = findViewById(R.id.c14_star4);
                     int c14_rate = getRate(time);
                     int c14_stars = sp.getInt("medium_c14_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c14_rate - c14_stars > 0){
-                        Log.d("Mydebug", "rate: " + c14_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c14_rate - c14_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c14_stars", c14_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c14_rate){
                             case 5:
@@ -3348,16 +3281,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c15_star4 = findViewById(R.id.c15_star4);
                     int c15_rate = getRate(time);
                     int c15_stars = sp.getInt("medium_c15_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c15_rate - c15_stars > 0){
-                        Log.d("Mydebug", "rate: " + c15_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c15_rate - c15_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c15_stars", c15_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c15_rate){
                             case 5:
@@ -3407,16 +3336,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c16_star4 = findViewById(R.id.c16_star4);
                     int c16_rate = getRate(time);
                     int c16_stars = sp.getInt("medium_c16_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c16_rate - c16_stars > 0){
-                        Log.d("Mydebug", "rate: " + c16_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c16_rate - c16_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c16_stars", c16_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c16_rate){
                             case 5:
@@ -3466,16 +3391,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c18_star4 = findViewById(R.id.c18_star4);
                     int c18_rate = getRate(time);
                     int c18_stars = sp.getInt("medium_c18_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c18_rate - c18_stars > 0){
-                        Log.d("Mydebug", "rate: " + c18_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c18_rate - c18_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c18_stars", c18_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c18_rate){
                             case 5:
@@ -3525,16 +3446,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c19_star4 = findViewById(R.id.c19_star4);
                     int c19_rate = getRate(time);
                     int c19_stars = sp.getInt("medium_c19_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c19_rate - c19_stars > 0){
-                        Log.d("Mydebug", "rate: " + c19_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c19_rate - c19_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c19_stars", c19_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c19_rate){
                             case 5:
@@ -3585,16 +3502,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c20_star4 = findViewById(R.id.c20_star4);
                     int c20_rate = getRate(time);
                     int c20_stars = sp.getInt("medium_c20_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c20_rate - c20_stars > 0){
-                        Log.d("Mydebug", "rate: " + c20_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c20_rate - c20_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c20_stars", c20_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c20_rate){
                             case 5:
@@ -3643,16 +3556,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c21_star4 = findViewById(R.id.c21_star4);
                     int c21_rate = getRate(time);
                     int c21_stars = sp.getInt("medium_c21_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c21_rate - c21_stars > 0){
-                        Log.d("Mydebug", "rate: " + c21_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c21_rate - c21_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c21_stars", c21_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c21_rate){
                             case 5:
@@ -3702,16 +3611,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c22_star4 = findViewById(R.id.c22_star4);
                     int c22_rate = getRate(time);
                     int c22_stars = sp.getInt("medium_c22_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c22_rate - c22_stars > 0){
-                        Log.d("Mydebug", "rate: " + c22_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c22_rate - c22_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c22_stars", c22_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c22_rate){
                             case 5:
@@ -3760,16 +3665,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c23_star4 = findViewById(R.id.c23_star4);
                     int c23_rate = getRate(time);
                     int c23_stars = sp.getInt("medium_c23_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c23_rate - c23_stars > 0){
-                        Log.d("Mydebug", "rate: " + c23_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c23_rate - c23_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c23_stars", c23_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c23_rate){
                             case 5:
@@ -3818,16 +3719,12 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
                     ImageView c24_star4 = findViewById(R.id.c24_star4);
                     int c24_rate = getRate(time);
                     int c24_stars = sp.getInt("medium_c24_stars", 0);
-                    Log.d("Mydebug", "starts: " + stars);
 
                     if(c24_rate - c24_stars > 0){
-                        Log.d("Mydebug", "rate: " + c24_rate);
-                        Log.d("Mydebug", "counter rate " + stars);
                         stars += (c24_rate - c24_stars);
                         editor.putInt("medium_counter_stars", stars);
                         editor.putInt("medium_c24_stars", c24_rate);
                         editor.commit();
-                        Log.d("Mydebug", "counter rate after " + stars);
                         starsText.setText(String.valueOf(stars));
                         switch (c24_rate){
                             case 5:
@@ -3880,7 +3777,6 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
         SharedPreferences sp = getSharedPreferences("MyPref", 0);
         SharedPreferences.Editor editor = sp.edit();
 
-        Log.d("Mydebug", "get reward " );
         stars += 1;
         editor.putInt("medium_counter_stars", stars);
         editor.commit();
@@ -3910,7 +3806,6 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d("Mydebug", "onResume");
         unlockLevels();
     }
 }

@@ -70,7 +70,6 @@ public class ExpertLevelActivity extends AppCompatActivity implements RewardedVi
                                          @Override
                                          public void onAdClosed() {
                                              interstitialAd.loadAd(new AdRequest.Builder().build());
-                                             Log.d("Mydebug", "level: " + level);
                                              startLevelActivity();
                                          }
                                      }
