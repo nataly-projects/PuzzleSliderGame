@@ -2103,8 +2103,8 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
 
         counter = sp.getInt("int_counter_medium", 0);
         counter += 1;
-        editor.commit();
         editor.putInt("int_counter_medium", counter);
+        editor.commit();
         if(counter < 10){
             counter_str += "0" + counter;
         }
@@ -3538,17 +3538,18 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
 
                 case "barcelona":
                     t21.setVisibility(View.VISIBLE);
-                    int c21Sp = sp.getInt("c21", 0);
+                    int c21Sp = sp.getInt("mc21", 0);
                     if(c21Sp == 0){
-                        editor.putInt("c21", 1);
+                        editor.putInt("mc21", 1);
                         editor.commit();
+                        counterHandle();
                     }
 
-                    long c21TimeSp = sp.getLong("c21_time", 0);
+                    long c21TimeSp = sp.getLong("mc21_time", 0);
 
                     if(c21TimeSp > time || c21TimeSp == 0){
-                        editor.putLong("c21_time", time);
-                        editor.putString("c21_time_str", Constants.timeHandler(time));
+                        editor.putLong("mc21_time", time);
+                        editor.putString("mc21_time_str", Constants.timeHandler(time));
                         editor.commit();
                         t21.setText(Constants.timeHandler(time));
                     }
@@ -3593,17 +3594,18 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
 
                 case "greece":
                     t22.setVisibility(View.VISIBLE);
-                    int c22Sp = sp.getInt("c22", 0);
+                    int c22Sp = sp.getInt("mc22", 0);
                     if(c22Sp == 0){
-                        editor.putInt("c22", 1);
+                        editor.putInt("mc22", 1);
                         editor.commit();
+                        counterHandle();
                     }
 
-                    long c22TimeSp = sp.getLong("c22_time", 0);
+                    long c22TimeSp = sp.getLong("mc22_time", 0);
 
                     if(c22TimeSp > time || c22TimeSp == 0){
-                        editor.putLong("c22_time", time);
-                        editor.putString("c22_time_str", Constants.timeHandler(time));
+                        editor.putLong("mc22_time", time);
+                        editor.putString("mc22_time_str", Constants.timeHandler(time));
                         editor.commit();
                         t22.setText(Constants.timeHandler(time));
                     }
@@ -3647,17 +3649,18 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
 
                 case "batad":
                     t23.setVisibility(View.VISIBLE);
-                    int c23Sp = sp.getInt("c23", 0);
+                    int c23Sp = sp.getInt("mc23", 0);
                     if(c23Sp == 0){
-                        editor.putInt("c23", 1);
+                        editor.putInt("mc23", 1);
                         editor.commit();
+                        counterHandle();
                     }
 
-                    long c23TimeSp = sp.getLong("c23_time", 0);
+                    long c23TimeSp = sp.getLong("mc23_time", 0);
 
                     if(c23TimeSp > time || c23TimeSp == 0){
-                        editor.putLong("c23_time", time);
-                        editor.putString("c23_time_str", Constants.timeHandler(time));
+                        editor.putLong("mc23_time", time);
+                        editor.putString("mc23_time_str", Constants.timeHandler(time));
                         editor.commit();
                         t23.setText(Constants.timeHandler(time));
                     }
@@ -3701,17 +3704,18 @@ public class MediumLevelActivity extends AppCompatActivity implements RewardedVi
 
                 case "cambodia":
                     t24.setVisibility(View.VISIBLE);
-                    int c24Sp = sp.getInt("c24", 0);
+                    int c24Sp = sp.getInt("mc24", 0);
                     if(c24Sp == 0){
-                        editor.putInt("c24", 1);
+                        editor.putInt("mc24", 1);
                         editor.commit();
+                        counterHandle();
                     }
 
-                    long c24TimeSp = sp.getLong("c24_time", 0);
+                    long c24TimeSp = sp.getLong("mc24_time", 0);
 
                     if(c24TimeSp > time || c24TimeSp == 0){
-                        editor.putLong("c24_time", time);
-                        editor.putString("c24_time_str", Constants.timeHandler(time));
+                        editor.putLong("mc24_time", time);
+                        editor.putString("mc24_time_str", Constants.timeHandler(time));
                         editor.commit();
                         t24.setText(Constants.timeHandler(time));
                     }
